@@ -4,6 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
+
 @Configuration
 public class QuestionConfig {
 
@@ -89,6 +91,10 @@ public class QuestionConfig {
                     "option4",
                     "rightAnswer",
                     "difficultyLevel");
+
+            repository.saveAll(
+                    List.of(question1,question2,question3,question4,question5,question6
+                            ,question7,question8,question9,question10));
 
 
         };
