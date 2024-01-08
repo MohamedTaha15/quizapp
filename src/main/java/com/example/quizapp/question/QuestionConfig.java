@@ -12,85 +12,85 @@ public class QuestionConfig {
     @Bean
     CommandLineRunner commandLineRunner(QuestionRepository repository){
         return args -> {
-            Question question1 = new Question("questionTitle",
+            Question question1 = new Question("questionTitle1",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "hard");
 
-            Question question2 = new Question("questionTitle",
+            Question question2 = new Question("questionTitle2",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "hard");
 
-            Question question3 = new Question("questionTitle",
+            Question question3 = new Question("questionTitle3",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "hard");
 
-            Question question4 = new Question("questionTitle",
+            Question question4 = new Question("questionTitle4",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "medium");
 
-            Question question5 = new Question("questionTitle",
+            Question question5 = new Question("questionTitle5",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "medium");
 
-            Question question6 = new Question("questionTitle",
+            Question question6 = new Question("questionTitle6",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "medium");
 
-            Question question7 = new Question("questionTitle",
+            Question question7 = new Question("questionTitle7",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "medium");
 
-            Question question8 = new Question("questionTitle",
+            Question question8 = new Question("questionTitle8",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "easy");
 
-            Question question9 = new Question("questionTitle",
+            Question question9 = new Question("questionTitle9",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "easy");
 
-            Question question10 = new Question("questionTitle",
+            Question question10 = new Question("questionTitle10",
                     "option1",
                     "option2",
                     "option3",
                     "option4",
                     "rightAnswer",
-                    "difficultyLevel");
+                    "easy");
 
             repository.saveAll(
                     List.of(question1,question2,question3,question4,question5,question6

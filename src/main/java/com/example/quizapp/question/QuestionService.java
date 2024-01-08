@@ -24,6 +24,34 @@ public class QuestionService {
         questionRepository.save(question);
     }
 
+    public List<Question> GetCategorisedQuestions(String difficultyLevel){
+        return questionRepository.findBydifficultyLevel(difficultyLevel);
+
+    }
+
+    public void UpdateQuestion(Integer id, String title, String option1, String option2,
+                               String option3, String option4, String rightanswer,
+                               String diffucultylevel
+                               ){
+        Optional<Question> updatedquestion = questionRepository.findById(id);
+        if (updatedquestion.isEmpty()){
+            throw new IllegalStateException("question with id: " + id + " does not exist ");
+        }
+        Question finalquestion = new Question(id,title,option1,option2,option3,option4,rightanswer,diffucultylevel);
+        questionRepository.save(finalquestion);
+
+
+    }
+
+    public void DeleteQuestion(Integer id){
+        Optional<Question> deletequestion = questionRepository.findById(id);
+        if (deletequestion.isEmpty()){
+            throw new IllegalStateException("question with id: " + id + " does not exist ");
+        }
+        questionRepository.deleteById(id);
+
+    }
+
 
 
 }
