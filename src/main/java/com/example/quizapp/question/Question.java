@@ -18,7 +18,7 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
                     generator = "question_sequence")
     private Integer id;
-    private String questionTitle;
+    private String title;
     private String option1;
     private String option2;
     private String option3;
@@ -27,14 +27,14 @@ public class Question {
     private String difficultyLevel;
 
 
-    public Question(String questionTitle,
+    public Question(String title,
                     String option1,
                     String option2,
                     String option3,
                     String option4,
                     String rightAnswer,
                     String difficultyLevel) {
-        this.questionTitle = questionTitle;
+        this.title = title;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
