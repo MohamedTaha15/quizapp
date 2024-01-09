@@ -20,7 +20,7 @@ public class QuizService {
     public void CreateQuiz(Quiz quiz, Integer questionNumber){
         Optional<Quiz> newquiz = quizRepository.findByTitle(quiz.getTitle());
         if (newquiz.isPresent()){
-            throw new IllegalStateException("Quiz with title :"+ quiz.getTitle() + " already exists");
+            throw new IllegalStateException("Quiz with title: "+ quiz.getTitle() + " already exists");
         }
         Pageable pageable = PageRequest.of(0,questionNumber);
         List<Question> questions = questionRepository.findRandomQuestions(pageable);
@@ -31,5 +31,25 @@ public class QuizService {
 
     public List<Quiz> GetAllQuizes() {
         return quizRepository.findAll();
+    }
+
+    public void DeleteQuiz(Integer id) {
+        Optional<Quiz> newquiz = quizRepository.findById(id);
+        if (newquiz.isEmpty()){
+            throw new IllegalStateException("Quiz with Id: "+ id + " does not exist");
+        }
+        quizRepository.deleteById(id);
+    }
+
+
+    public void UpdateQuiz(Integer id, String title) {
+        Optional<Quiz> newquiz = quizRepository.findById(id);
+        if (newquiz.isEmpty()){
+            throw new IllegalStateException("Quiz with Id: "+ id + " does not exist");
+        }
+        Quiz requiredquiz = quizRepository.getById(id);
+        Quiz updatequiz = new Quiz(id,title,requiredquiz.getQuestions());
+        quizRepository.save(updatequiz);
+
     }
 }

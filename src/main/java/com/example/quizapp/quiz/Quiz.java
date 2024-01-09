@@ -29,6 +29,12 @@ public class Quiz {
         this.title = title;
     }
 
+    public Quiz(Integer id, String title, List<Question> questions) {
+        this.id = id;
+        this.title = title;
+        this.questions = questions;
+    }
+
     public Quiz() {
 
     }

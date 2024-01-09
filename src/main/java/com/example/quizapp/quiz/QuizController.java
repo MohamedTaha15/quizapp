@@ -24,4 +24,14 @@ public class QuizController {
         return quizService.GetAllQuizes();
     }
 
+    @DeleteMapping("delete/{id}")
+    public void DeleteQuiz(@PathVariable("id") Integer id){
+        quizService.DeleteQuiz(id);
+    }
+
+    @PutMapping("update/{id}")
+    public void UpdateQuiz(@PathVariable("id") Integer id, @RequestParam (required = false) String title){
+        quizService.UpdateQuiz(id,title);
+    }
+
 }
